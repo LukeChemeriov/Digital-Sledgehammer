@@ -6,6 +6,7 @@
 #include <string>
 #include <iostream> // Don't expect to see using namespace std; here, I think I'd
                     // rather poke my eyes out with sharp sticks...
+#include "../lib/io.h"
 
 // A simple echo function
 void echoFunction(const std::string & userinput)
