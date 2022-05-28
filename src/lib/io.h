@@ -4,6 +4,7 @@
 
 // Preprocessor statements
 #include <iostream>
+#pragma once
 
 // Digital Sledgehammer IO class
 class DS_IO
@@ -19,7 +20,7 @@ public:
     void kprintf(std::string __prompt, int endl = 0)
     {
         std::cout << __prompt;
-        if (endl != 0){std::cout << std::endl;}else{}
+        if (endl == 0){std::cout << std::endl;}else{}
         return;
     }
     // Input (std::string)
