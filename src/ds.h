@@ -15,6 +15,8 @@ std::unordered_map<std::string, std::function<void(const std::string &) >> funct
 void RegisterFunctions()
 {
     functions["echo"] = echoFunction;
+    functions["clear"] = clearFunction;
+    functions["exit"] = exitFunction;
     // Add more functions here as they are created
 }
 

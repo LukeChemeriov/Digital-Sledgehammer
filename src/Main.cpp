@@ -21,6 +21,7 @@ int main()
     std::string cmdname;
     int commandlength = 0;
     if (commandlength == 0){}else{} // This is so that G++ doesn't complain that I have got a variable and never used it
+    bool DoesInputStringContainSpace = false;
     // A while loop to continuesly get commands from the user
     while (true)
     {        
@@ -48,11 +49,16 @@ int main()
             //      2) Erase everything up to and including that space, and store it in another variable
             // I don't know why I made a list, because that's it 
             commanddata = input;
+            // Reset the DoesInputStringContainSpace counter
+            DoesInputStringContainSpace = false;
+            // Let's loop!
             for (int i = 0; i <= commandlength; i++)
             {
                 if (commanddata[i] == 32)
                 {
+                    DoesInputStringContainSpace = true;
                     commanddata.erase(commanddata.begin(), commanddata.begin() + (i+1));
+                    
                     break;
                 }
                 else
@@ -60,8 +66,21 @@ int main()
                     continue;
                 }
             }
+            // Now, let's test to see if we actually found a space at all
+            if (DoesInputStringContainSpace)
+            {
+                // The string does contain a space, so fine.
+                
+            }
+            else
+            {
+                // The string does not contain a space, so let's get rid of the entire commanddata so 
+                // we aren't sending the cmdname as commanddata
+                commanddata.clear();
+            }
             // Now we can look up the function we found, and run it, along with the input
             // the user specified
+            std::cout << "Sending: cmdname = " << cmdname << ", commanddata = " + commanddata << std::endl;
             functions[cmdname](commanddata);
         }
     }   
