@@ -80,7 +80,6 @@ int main()
             }
             // Now we can look up the function we found, and run it, along with the input
             // the user specified
-            std::cout << "Sending: cmdname = " << cmdname << ", commanddata = " + commanddata << std::endl;
             // Make sure that the user sent an understandable command
             if (CheckKeyExistsInMap(functions, cmdname))
             {

@@ -35,9 +35,7 @@ void clearFunction(const std::string& userinput)
     if (userinput.length() >0)
     {
         // tell them not to
-        io.kprintf("Could not find definition for argument: " + userinput + ", please try again with no arguments."); 
-        // Debugging tool
-        io.kprintf("You entered: " + userinput + " as an argument.");       
+        io.kprintf("Could not find definition for argument: " + userinput + ", please try again with no arguments.");     
     }
     // if not, let's continue
     else
