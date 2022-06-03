@@ -81,7 +81,15 @@ int main()
             // Now we can look up the function we found, and run it, along with the input
             // the user specified
             std::cout << "Sending: cmdname = " << cmdname << ", commanddata = " + commanddata << std::endl;
-            functions[cmdname](commanddata);
+            // Make sure that the user sent an understandable command
+            if (CheckKeyExistsInMap(functions, cmdname))
+            {
+                functions[cmdname](commanddata);
+            }
+            else
+            {
+                DS_IO.kprintf("Cannot find command: " + cmdname + ".");
+            }
         }
     }   
 }   
