@@ -70,7 +70,7 @@ int main()
             if (DoesInputStringContainSpace)
             {
                 // The string does contain a space, so fine.
-                
+                ;
             }
             else
             {
